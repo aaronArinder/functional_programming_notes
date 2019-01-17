@@ -1,8 +1,14 @@
 /*
  * currying: taking a function whose arity is greater than 1 and unravelling it
- * to multiple, chained functions of arity 1
+ * to multiple, chained functions of arity 1. It's a form of partially applying
+ * arguments passed to a function.
  *
- * example from functional light, p. 71
+ * practical use: partially applying arguments lets you take in some arguments,
+ * do some logic, take in more arguments, and do more logic. If that first-round
+ * of logic includes building an object with different helper methods that close
+ * over the passed-in fn, you could create a sweet way of custom chains.
+ *
+ * notes: `curry` comes from functional light, p. 71
  * */
 
 // fn.length only works with non-variadic, non-destructured params
