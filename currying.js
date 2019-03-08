@@ -17,7 +17,7 @@ function curry (fn, arity = fn.length) {
   return (function nextCurried(prevArgs) {
     return function curried(nextArg) {
       // collect
-      var args = [ ...prevArgs, nextArg ];
+      const args = [ ...prevArgs, nextArg ];
       // once we've unravelled
       if (args.length >= arity) {
         // call the closed-over fn with those args
@@ -39,8 +39,6 @@ function sum (a,b,c,d){
 // curried fn
 const curried = curry(sum);
 
-// what the `engine` of currying looks like
-console.log('curried', curried);
 // returns 10
 console.log(curried(1)(2)(3)(4))
 
